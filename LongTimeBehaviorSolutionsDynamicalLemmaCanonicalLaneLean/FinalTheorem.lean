@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import LongTimeBehaviorSolutionsDynamicalLemmaCanonicalLaneLean.GlobalAttractorPackage
+import LongTimeBehaviorSolutionsDynamicalLemmaCanonicalLaneLean.LyapunovFunctionPackage
+import LongTimeBehaviorSolutionsDynamicalLemmaCanonicalLaneLean.OmegaLimitSetPackage
+import LongTimeBehaviorSolutionsDynamicalLemmaCanonicalLaneLean.ConvergencePackage
+import LongTimeBehaviorSolutionsDynamicalLemmaCanonicalLaneLean.BifurcationAnalysisPackage
+
+namespace HautevilleHouse
+namespace LongTimeBehaviorSolutionsDynamicalLemmaCanonicalLaneLean
+
+def ConstrainedLongTimeBehaviorClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_long_time_behavior_endgame (A : AdmissibleClass) :
+    ConstrainedLongTimeBehaviorClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end LongTimeBehaviorSolutionsDynamicalLemmaCanonicalLaneLean
+end HautevilleHouse
